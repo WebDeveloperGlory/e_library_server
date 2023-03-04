@@ -12,6 +12,11 @@ var commentSchema = new Schema({
         ref: 'User',
         required: true
     },
+    authurName: {
+        type: String,
+        required: true,
+        default: "Hello"
+    },
     book: {
         type: Schema.Types.ObjectId,
         ref: 'Book',

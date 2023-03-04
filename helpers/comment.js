@@ -3,7 +3,8 @@ var db          = require('../models');
 exports.createComments = function(req, res, next) {
     const newComment = {
         text: req.body.text,
-        authur: req.body.authur
+        authur: req.body.authur,
+        authurName: req.body.name
     }
 
     db.Comment.create(newComment)
