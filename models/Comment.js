@@ -20,6 +20,11 @@ var commentSchema = new Schema({
     book: {
         type: Schema.Types.ObjectId,
         ref: 'Book',
+    },
+    date: {
+        type: Date,
+        required: true,
+        default: Date.now
     }
     
 });
