@@ -12,7 +12,7 @@ exports.getUser = function(req, res) {
 exports.addEmail = function(req, res) {
     db.User.findOneAndUpdate({_id: req.params.userId}, { $set: {email: req.body.email, username: req.body.username}, $inc: { 'points' : 10 } }, {new: true})
         .then(function(user) {
-            res.status(200).json({message: `successfully updated email to ${user.email}`})
+            res.status(200).json({message: `successfully updated email to ${user.email}`, user: user});
         }).catch(function(err) {
             res.status(401).json(err);
         });
