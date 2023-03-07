@@ -19,6 +19,10 @@ app.use(cors({
     origin: 'http://127.0.0.1:5173',
     credentials: true
 }));
+app.use(cors({
+    origin: 'https://thunderous-bavarois-a8f0ad.netlify.app',
+    credentials: true
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
