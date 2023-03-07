@@ -59,6 +59,6 @@ app.use('/api/books/:bookId/comments', commentRoutes)
 // });
 
 var PORT = 8081;
-app.listen(PORT, function() {
+app.listen(process.env.PORT || PORT, function() {
     console.log(`App is running on port ${PORT}`)
 });
