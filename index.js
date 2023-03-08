@@ -46,6 +46,14 @@ app.use((req, res, next) => {
     res.locals.currentUser = req.user;
     next();
 })
+
+// ============= TEST CODE ============= //
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://thunderous-bavarois-a8f0ad.netlify.app, http://127.0.0.1:5173");
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 // =======================================END OF MIDLLEWARES=======================================//
 
 app.get('/', (req, res) => {
