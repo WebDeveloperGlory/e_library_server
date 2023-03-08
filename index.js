@@ -16,11 +16,7 @@ var bodyParser      = require('body-parser'),
 
 // =======================================END OF IMPORT=======================================//
 app.use(cors({
-    origin: 'https://thunderous-bavarois-a8f0ad.netlify.app',
-    credentials: true
-}));
-app.use(cors({
-    origin: 'http://127.0.0.1:5173',
+    origin: 'https://thunderous-bavarois-a8f0ad.netlify.app' || 'http://127.0.0.1:5173',
     credentials: true
 }));
 app.use(bodyParser.json());
@@ -49,7 +45,7 @@ app.use((req, res, next) => {
 
 // ============= TEST CODE ============= //
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://thunderous-bavarois-a8f0ad.netlify.app");
+  res.header("Access-Control-Allow-Origin", "https://thunderous-bavarois-a8f0ad.netlify.app, http://127.0.0.1:5173");
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
